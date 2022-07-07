@@ -1,4 +1,4 @@
-name: Villager Restock
+name: VillagerRestock
 version: '${project.version}'
 main: voidpointer.spigot.villagerrestock.VillagerRestockPlugin
 api-version: 1.19
