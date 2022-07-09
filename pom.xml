@@ -9,7 +9,7 @@
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>Villager Restock</name>
+    <name>VillagerRestock</name>
 
     <description>This plugin resets villager's demands and restocks.</description>
     <properties>
