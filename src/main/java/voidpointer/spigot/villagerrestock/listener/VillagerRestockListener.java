@@ -20,6 +20,8 @@ public final class VillagerRestockListener implements Listener {
             return; // what kind of entity is that??
         if (config.resetRestock())
             villager.setRestocksToday(0);
+        if (config.resetDemands())
+            resetDemands(villager);
     }
 
     @EventHandler public void resetDemandsAndReputationsOnRightClick(final PlayerInteractEntityEvent event) {
@@ -27,8 +29,6 @@ public final class VillagerRestockListener implements Listener {
             return;
         if (config.clearReputations())
             villager.clearReputations();
-        if (config.resetDemands())
-            resetDemands(villager);
     }
 
     private void resetDemands(final Merchant merchant) {
