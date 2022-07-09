@@ -1,7 +1,7 @@
 # VillagerRestock
 
 Villager restock is an optimized and configurable alternative to
-[Villager Restocking][VRDpUrl] [Infinite Trades][ITDpUrl] datapacks.
+[Villager Restocking][VRDpUrl] and [Infinite Trades][ITDpUrl] datapacks.
 
 [VRDpUrl]: https://www.planetminecraft.com/data-pack/villager-restocking-v1-0/
 [ITDpUrl]: https://www.planetminecraft.com/data-pack/no-trading-limits-infinite-trades-1-18x/
