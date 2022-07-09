@@ -1,7 +1,11 @@
 name: VillagerRestock
 version: '${project.version}'
 main: voidpointer.spigot.villagerrestock.VillagerRestockPlugin
-api-version: 1.19
+api-version: '${mc.api-version}'
 authors: [ _voidpointer ]
 description: This plugin resets villager's demands and restocks.
 website: github.com/voidpointer0x00
+
+commands:
+  vr-reload:
+    permission: villagerrestock.reload

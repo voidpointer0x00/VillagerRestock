@@ -6,7 +6,7 @@
 
     <groupId>voidpointer.spigot</groupId>
     <artifactId>villager-restock</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>VillagerRestock</name>
@@ -14,6 +14,7 @@
     <description>This plugin resets villager's demands and restocks.</description>
     <properties>
         <java.version>17</java.version>
+        <mc.api-version>1.19</mc.api-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <url>github.com/voidpointer0x00</url>
@@ -29,22 +30,6 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
         <resources>
             <resource>
@@ -52,7 +37,7 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
-        <finalName>${project.name}-${project.version}</finalName>
+        <finalName>${project.name}-${project.version}-${mc.api-version}</finalName>
     </build>
 
     <repositories>
