@@ -1,3 +1,5 @@
+<img src="https://user-images.githubusercontent.com/43143315/178108584-abd72f88-0efc-44b5-97bd-be206ce3738d.png" align=right />
+
 # VillagerRestock
 
 Villager restock is an optimized and configurable alternative to
