@@ -6,6 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.VillagerReplenishTradeEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.bukkit.inventory.Merchant;
 import org.bukkit.inventory.MerchantRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 import voidpointer.spigot.villagerrestock.config.VillagerRestockConfig;
@@ -30,8 +31,8 @@ public final class VillagerRestockListener implements Listener {
             resetDemands(villager);
     }
 
-    private void resetDemands(final Villager villager) {
-        for (final MerchantRecipe recipe : villager.getRecipes())
+    private void resetDemands(final Merchant merchant) {
+        for (final MerchantRecipe recipe : merchant.getRecipes())
             if (recipe.getDemand() > 0)
                 recipe.setDemand(0);
     }
