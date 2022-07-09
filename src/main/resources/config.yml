@@ -1,0 +1,16 @@
+# I'd only use reset-restock property to keep the game close
+#   to vanilla behaviour and remove this annoying 10m cooldown
+#   between restocks. Though, I still implemented reputations and
+#   demands resets just in case someone reckons that it should also
+#   be fixed on their servers.
+settings:
+  # Resets villager's RestocksToday NBT tag so that
+  #   10m restock cooldown doesn't start.
+  reset-restock: true
+  # Resets the demand on merchant recipes, so they don't
+  #   higher the price anymore. Doesn't affect negative
+  #   demands (i.e. Hero of the Village effect).
+  reset-demands: false
+  # Clears all reputations on villager interaction.
+  #   (i.e. you hit the villager or kill an iron golem)
+  clear-reputations: false
