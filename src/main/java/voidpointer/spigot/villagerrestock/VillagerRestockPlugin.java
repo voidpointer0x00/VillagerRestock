@@ -6,6 +6,7 @@ import voidpointer.spigot.villagerrestock.config.VillagerRestockConfig;
 import voidpointer.spigot.villagerrestock.listener.VillagerRestockListener;
 
 import static org.bukkit.ChatColor.GREEN;
+import static org.bukkit.ChatColor.RED;
 
 public final class VillagerRestockPlugin extends JavaPlugin {
     private VillagerRestockConfig config;
@@ -18,9 +19,10 @@ public final class VillagerRestockPlugin extends JavaPlugin {
     @Override public void onEnable() {
         new VillagerRestockListener(config).register(this);
         new ReloadCommand(config).register(this);
+        getLogger().info(GREEN + "The plugin enabled");
     }
 
     @Override public void onDisable() {
-
+        getLogger().info(RED + "The plugin disabled");
     }
 }
