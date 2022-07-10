@@ -23,8 +23,16 @@ public final class VillagerRestockConfig {
         return fileConfiguration.getBoolean("settings.reset-demands", false);
     }
 
-    public boolean clearReputations() {
-        return fileConfiguration.getBoolean("settings.clear-reputations", false);
+    public boolean clearNegativeReputations() {
+        return fileConfiguration.getBoolean("settings.reputations.clear-negative", false);
+    }
+
+    public boolean clearTradeReputations() {
+        return fileConfiguration.getBoolean("settings.reputations.clear-trade", false);
+    }
+
+    public boolean clearCureReputations() {
+        return fileConfiguration.getBoolean("settings.reputations.clear-cure", false);
     }
 
     public void reload() {
