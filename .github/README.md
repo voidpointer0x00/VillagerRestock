@@ -31,7 +31,17 @@ and clear [players reputations][PopularityUrl].
 [Supply&DemandUrl]: https://minecraft.fandom.com/wiki/Villager#Supply_and_demand
 [PopularityUrl]: https://minecraft.fandom.com/wiki/Villager#Popularity
 
-## Configuration
+## Installation
+
+Download the right plugin version for you server and install it under the
+`plugins/` in your server working directory.
+
+### Commands
+
+* `/vr-reload` — reloads the plugin configuration. Requires
+`villagerrestock.reload` permission to run.
+
+### Configuration
 
 ```yaml
 # I'd only use reset-restock property to keep the game close
