@@ -12,6 +12,9 @@ import org.bukkit.inventory.MerchantRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 import voidpointer.spigot.villagerrestock.config.VillagerRestockConfig;
 
+import java.util.Map;
+import java.util.UUID;
+
 import static com.destroystokyo.paper.entity.villager.ReputationType.MAJOR_NEGATIVE;
 import static com.destroystokyo.paper.entity.villager.ReputationType.MAJOR_POSITIVE;
 import static com.destroystokyo.paper.entity.villager.ReputationType.MINOR_NEGATIVE;
@@ -41,9 +44,10 @@ public final class VillagerRestockListener implements Listener {
         if (!(event.getRightClicked() instanceof final Villager villager))
             return;
 
-        final Reputation reputation = villager.getReputation(event.getPlayer().getUniqueId());
+        final Map<UUID, Reputation> reputations = villager.getReputations();
+        Reputation reputation = reputations.get(event.getPlayer().getUniqueId());
         if (reputation == null)
-            return;
+            reputations.put(event.getPlayer().getUniqueId(), reputation = new Reputation());
 
         if (config.clearNegativeReputations())
             clearNegativeReputations(reputation);
@@ -53,8 +57,10 @@ public final class VillagerRestockListener implements Listener {
             clearCureReputations(reputation);
 
         // save new reputations if any was changed
-        if (!reputation.equals(villager.getReputation(event.getPlayer().getUniqueId())))
-            villager.setReputation(event.getPlayer().getUniqueId(), reputation);
+        if (!reputation.equals(villager.getReputation(event.getPlayer().getUniqueId()))) {
+            villager.clearReputations();
+            villager.setReputations(reputations);
+        }
     }
 
     private void clearNegativeReputations(final Reputation reputation) {
