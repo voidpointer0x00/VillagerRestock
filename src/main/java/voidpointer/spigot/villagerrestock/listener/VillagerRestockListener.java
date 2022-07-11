@@ -20,12 +20,16 @@ import static com.destroystokyo.paper.entity.villager.ReputationType.MAJOR_POSIT
 import static com.destroystokyo.paper.entity.villager.ReputationType.MINOR_NEGATIVE;
 import static com.destroystokyo.paper.entity.villager.ReputationType.MINOR_POSITIVE;
 import static com.destroystokyo.paper.entity.villager.ReputationType.TRADING;
+import static org.bukkit.event.EventPriority.HIGHEST;
 
 @RequiredArgsConstructor
 public final class VillagerRestockListener implements Listener {
     private final VillagerRestockConfig config;
 
-    @EventHandler public void resetRestocksOnReplenish(final VillagerReplenishTradeEvent event) {
+    @EventHandler(priority=HIGHEST)
+    public void resetRestocksOnReplenish(final VillagerReplenishTradeEvent event) {
+        if (event.isCancelled())
+            return;
         if (!(event.getEntity() instanceof final Villager villager))
             return; // what kind of entity is that??
         if (config.resetRestock())
@@ -40,7 +44,10 @@ public final class VillagerRestockListener implements Listener {
                 recipe.setDemand(0);
     }
 
-    @EventHandler public void clearReputationsOnRightClick(final PlayerInteractEntityEvent event) {
+    @EventHandler(priority=HIGHEST)
+    public void clearReputationsOnRightClick(final PlayerInteractEntityEvent event) {
+        if (event.isCancelled())
+            return;
         if (!(event.getRightClicked() instanceof final Villager villager))
             return;
 
