@@ -38,7 +38,7 @@ and clear [players reputations][PopularityUrl].
 #   to vanilla behaviour and remove this annoying 10m cooldown
 #   between restocks. Though, I still implemented reputations and
 #   demands resets just in case someone reckons that it should also
-#   be fixed on their servers.
+#   be changed on their servers.
 settings:
   # Resets villager's RestocksToday NBT tag so that
   #   10m restock cooldown doesn't start.
@@ -47,10 +47,20 @@ settings:
   #   higher the price anymore. Doesn't affect negative
   #   demands (i.e. Hero of the Village effect).
   reset-demands: false
-  # Clears all reputations on villager interaction.
-  #   (i.e. you hit the villager or kill an iron golem)
-  clear-reputations: false
-
+  reputations:
+    # Clears negative reputations.
+    #   (prices no longer get higher when you damage/kill villagers)
+    clear-negative: false
+    # Clears trade reputations.
+    #   (disables trading bonuses from upgrading villagers to a certain level)
+    clear-trade: false
+    # Clears reputation for cured villagers.
+    #   (disables trading bonuses from curing zombified villagers using golden apples)
+    clear-cure: false
+    # NOT YET IMPLEMENTED
+    # Disables trading bonuses from Hero of the Village effect.
+    #   You may want to enable it if you reckon raid farms are too OP.
+    # disable-hero: false
 ```
 
 ## Requirements
